@@ -41,5 +41,3 @@ RUN poetry lock && poetry install --only main
 
 # Verify CLI
 RUN which quantmsutilsc && quantmsutilsc --help
-
-ENTRYPOINT ["quantmsutilsc"]
