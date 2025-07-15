@@ -1,7 +1,22 @@
 FROM python:3.10-slim
 
 # System deps
-RUN apt-get update && apt-get install -y git curl build-essential && apt-get clean
+RUN apt-get update && apt-get install -y \
+    git \
+    curl \
+    build-essential \
+    libglib2.0-0 \
+    libgomp1 \
+    libqt5widgets5 \
+    libqt5gui5 \
+    libqt5core5a \
+    libqt5network5 \
+    libqt5xml5 \
+    libqt5concurrent5 \
+    zlib1g \
+    liblz4-1 \
+    libboost-all-dev \
+    && apt-get clean
 
 # Install Poetry
 RUN curl -sSL https://install.python-poetry.org | python3 - && \
